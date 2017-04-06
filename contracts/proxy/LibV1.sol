@@ -1,12 +1,11 @@
 pragma solidity ^0.4.8;
 
-import "../contracts/LibInterface.sol";
+import "./Zeppelin.sol";
 
 library LibV1 {
-  function getUint(LibInterface.S storage s) returns (uint) {
-    return s.i;
+  /*
+  function getPrice(Zeppelin.SimpleToken storage self) returns (uint) {
+    return self.;
   }
-  function setUint(LibInterface.S storage s, uint i) {
-    s.i = i;
-  }
+  */
 }

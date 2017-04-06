@@ -9,12 +9,14 @@ import '../SafeMath.sol';
  * Base contract supporting async send for pull payments.
  * Inherit from this contract and use asyncSend instead of send.
  */
-contract PullPayment is SafeMath {
+contract PullPayment {
+  using SafeMath for uint;
+
   mapping(address => uint) public payments;
 
   // store sent amount as credit to be pulled, called by payer
   function asyncSend(address dest, uint amount) internal {
-    payments[dest] = safeAdd(payments[dest], amount);
+    payments[dest] = payments[dest].safeAdd(amount);
   }
 
   // withdraw accumulated balance, called by payee
