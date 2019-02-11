@@ -37,3 +37,7 @@ build/
 
 # truffle
 .node-xmlhttprequest-*
+
+# buidler
+artifacts/
+cache/

@@ -9,8 +9,7 @@
   ],
   "scripts": {
     "build": "scripts/build.sh",
-    "compile": "truffle compile",
-    "console": "truffle console",
+    "compile": "npx buidler compile",
     "coverage": "scripts/coverage.sh",
     "lint": "npm run lint:js && npm run lint:sol",
     "lint:fix": "npm run lint:js:fix",
@@ -55,8 +54,11 @@
     "openzeppelin-test-helpers": "^0.1.1",
     "pify": "^4.0.1",
     "solhint": "^1.5.0",
-    "solidity-coverage": "https://github.com:rotcivegaf/solidity-coverage.git#5875f5b7bc74d447f3312c9c0e9fc7814b482477",
-    "truffle": "^5.0.0"
+    "solidity-coverage": "https://github.com/rotcivegaf/solidity-coverage.git#5875f5b7bc74d447f3312c9c0e9fc7814b482477"
   },
-  "dependencies": {}
+  "dependencies": {
+    "@nomiclabs/buidler": "^1.0.0-beta.1",
+    "@nomiclabs/buidler-truffle5": "^1.0.0-beta.1",
+    "web3": "^1.0.0-beta.37"
+  }
 }

@@ -52,6 +52,7 @@ if ganache_running; then
 else
   echo "Starting our own ganache instance"
   start_ganache
+  sleep 1; # wait for ganache to start
 fi
 
 if [ "$SOLC_NIGHTLY" = true ]; then
@@ -59,7 +60,7 @@ if [ "$SOLC_NIGHTLY" = true ]; then
   wget -q https://raw.githubusercontent.com/ethereum/solc-bin/gh-pages/bin/soljson-nightly.js -O /tmp/soljson.js && find . -name soljson.js -exec cp /tmp/soljson.js {} \;
 fi
 
-truffle version
+npx buidler --version
 
 if [ "$SOLIDITY_COVERAGE" = true ]; then
   node_modules/.bin/solidity-coverage
@@ -68,5 +69,5 @@ if [ "$SOLIDITY_COVERAGE" = true ]; then
     cat coverage/lcov.info | node_modules/.bin/coveralls
   fi
 else
-  node_modules/.bin/truffle test "$@"
+  node_modules/.bin/buidler test "$@"
 fi
